@@ -1,0 +1,46 @@
+
+
+table{
+    border: 1px black solid;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+tr, td {
+    border: 1px black solid;
+    border-collapse: collapse;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+  
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
+
+button{
+    margin-top: 4px;
+}
+
+#ciao{
+    margin-bottom: 5px;
+    border: solid 1px #807863;
+}
+
+#pwd{
+    margin-bottom: 5px;
+    border: solid 1px #807863;
+}
+
+
+  
+  
