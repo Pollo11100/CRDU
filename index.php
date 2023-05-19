@@ -4,19 +4,22 @@
     <head>
 		  <link rel="stylesheet" href="../style.css">
 	  </head>
+    
+    <nav class="navMenu">
 
-    <form  method = "post">
+        <form  method = "post">
 
-      <label>Username: </label>
-      <input type = "text" name = "username" id="ciao"> <br>
+        <label>Username: </label>
+        <input type = "text" name = "username" id="ciao"> <br>
 
-      <label>Password: </label>
-      <input type = "password" name = "password" id="pwd"> <br>
-  
+        <label>Password: </label>
+        <input type = "password" name = "password" id="pwd"> <br>
+    
 
-      <button type = "submit" name = "insertData">Submit</button> <br>
-        
-    </form>
+        <button type = "submit" name = "insertData">Submit</button> <br>
+            
+        </form>
+    </nav>
 
     <?php
         require_once('../connection.php');

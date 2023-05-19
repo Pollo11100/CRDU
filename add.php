@@ -17,19 +17,29 @@
 		$name=false;
 		if(!empty($_POST['firstname'])){
 			$name=true;
-		}else{
-			echo "compilare il campo del nome ";
 		}
 
-		$cognome=false;
+		$cogome=false;
 		if(!empty($_POST['lastname'])){
 			$cognome=true;
-		} else{
-			echo "compilare il campo del cognome";
+		} 
+
+		$em = true;
+		if(!empty($_POST['email'])){
+			if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+				$em = true;
+			}else{
+				$em= false;
+			}
 		}
 			
-		if($name==true && $cognome==true){
-			$sqlInsertData = "INSERT INTO clients (firstname, lastname, email) VALUES ('$firstname', '$lastname', '$email')";
+		if($name==true && $cognome==true && $em==true){
+
+			$nome = strtolower($_POST['firstname']);
+			$cognome  = strtolower($_POST['lastname']);
+
+
+			$sqlInsertData = "INSERT INTO clients (firstname, lastname, email) VALUES ('$nome', '$cognome', '$email')";
 			if (mysqli_query($conn, $sqlInsertData)) {
 				header("location: ../menu.php"); 
 			} else {
@@ -75,20 +85,24 @@
 	</head>
 
     <body>
-        
-        <form  method = "post">
-            <label>Nome: </label>
-            <input type = "text" name = "firstname" id="ciao"> <br>
+		
+		<nav class="navMenu">
+			<form  method = "post">
+				<label>Nome: </label>
+				<input type = "text" name = "firstname" id="ciao"> <br>
 
-            <label>Cognome: </label>
-            <input type = "text" name = "lastname" id="ciao"> <br>
+				<label>Cognome: </label>
+				<input type = "text" name = "lastname" id="ciao"> <br>
 
-            <label>Email: </label>
-            <input type = "text" name = "email" id="ciao"> <br>
+				<label>Email: </label>
+				<input type = "text" name = "email" id="ciao"> <br>
 
-            <button type = "submit" name = "insertData">Submit</button> <br>
-           
-        </form>
+				<button type = "submit" name = "insertData">Submit</button>
+				
+				<a href="../menu.php">Back</a>
+			
+			</form>
+		</nav>
        
       
 

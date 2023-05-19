@@ -1,9 +1,8 @@
 <?php
-    //session_start();
+    require_once("../connection.php");
     if(!isset($_SESSION['username'])){
         header('location: ../controller/index.php');
     }
-
     
 ?>
 
@@ -13,28 +12,33 @@
 <html>
     
     <head>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../style.css">
 	</head>
 
 
     <body>
         
-        <form method="post">    
-            <label>Nome: </label>
-            <input type="text" name="firstname" id="ciao" value='<?php echo $_GET["firstname"]; ?>'><br>
+        <nav class="navMenu">
+            <form method="post">    
+                <label>Nome: </label>
+                <input type="text" name="firstname" id="ciao" value='<?php echo $_GET["firstname"]; ?>'><br>
 
-            <label>Cognome: </label>
-            <input type="text" name="lastname" id="ciao" value='<?php echo $_GET["lastname"]; ?>'><br>
+                <label>Cognome: </label>
+                <input type="text" name="lastname" id="ciao" value='<?php echo $_GET["lastname"]; ?>'><br>
+                
+                <label>Email: </label>
+                <input type="text" name="email" id="ciao" value='<?php echo $_GET["email"]; ?>'><br>
+                
+                <button type="submit" id="submit">Submit</button>
+               
+                <a href="../visual/visual.php">
+					<button type="submit" name="back">Back</button>
+				</a>
             
-            <label>Email: </label>
-            <input type="text" name="email" id="ciao" value='<?php echo $_GET["email"]; ?>'><br>
-            
-            <button type="submit" id="submit">Submit</button>
-        
-        </form>
+            </form>
+        </nav>
 
         <?php
-           require_once("../connection.php");
            
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$firstname = $_POST['firstname'];

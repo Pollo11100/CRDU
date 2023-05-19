@@ -21,14 +21,11 @@
 	</head>
     
     <body>
-        <a href="model/add.php">add</a><br>
-        <a href="visual/visual.php">table</a>
-        
-        <form method="POST">
-			<button type = "submit" name = "logout">logout</button> <br>
-		</form>
-
-        
+        <nav class="navMenu">
+            <a href="model/add.php">add</a>
+            <a href="visual/visual.php">table</a>
+            <a href="controller/logout.php">logout</a>  
+        </nav>
     </body>
 
 </html>

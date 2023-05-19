@@ -9,7 +9,6 @@
 
 			<?php      
 				require_once("../connection.php");
-				//session_start();
 				if(!isset($_SESSION['username'])){
 					header('location: ../controller/index.php');
 				}
@@ -37,7 +36,7 @@
 						$sql = "DELETE FROM clients WHERE id = " . $_GET["id"];
 
 						if (mysqli_query($conn, $sql)) {
-							header("location: ../menu.php");  
+							header("location: ../visual/visual.php");  
 							
 						} else {
 							echo "Error deleting record: " . mysqli_error($conn);
@@ -49,14 +48,18 @@
 				mysqli_close($conn);
 				
 			?>
+			
+			<div id="delete">
+				<form method="POST">
+					<button type = "submit" name = "delete">Delete</button>
+				</form>
 
-			<form method="POST">
-				<button type = "submit" name = "delete">Delete</button> <br>
-			</form>
+				<a href="../visual/visual.php">
+					<button type="submit" name="anulla">Annulla</button>
+				</a>
+			</div>
+			
 
-			<a href="../menu.php">
-				<button type="submit" name="anulla">Anulla</button>
-			</a>
 			
 
 		</body>

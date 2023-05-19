@@ -1,31 +1,39 @@
-
+body {
+    background: #272727;
+    font-family: "Montserrat", sans-serif;
+}
 
 table{
     border: 1px black solid;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin: 0px auto;
+    
 }
 
 tr, td {
-    border: 1px black solid;
+    border: 1px white solid;
     border-collapse: collapse;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: whitesmoke;
 }
 
 a:link {
     text-decoration: none;
-    color: black;
+    color: grey;
 }
   
 a:visited {
     text-decoration: none;
-    color: black;
+    color: grey;
 }
 
 a:hover {
     color: blue;
 }
+
 
 button{
     margin-top: 4px;
@@ -41,6 +49,57 @@ button{
     border: solid 1px #807863;
 }
 
+.navMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 80px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    margin-bottom: 5px;
+}
 
+#logout{
+    display: block; 
+    margin: 0 auto;
+    margin-top: 5px;
+}
   
+.navMenu a:hover {
+    color: blue;
+}
+
+label{
+    color: whitesmoke;
+}
+
+text{
+    color: whitesmoke;
+}
   
+
+#oke{
+    position: fixed;
+    left: 50%;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+#delete{
+    text-align: center;
+    left: 50%;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
