@@ -26,17 +26,21 @@
     
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $hashPassword = hash("sha256", $password);
-
             if(!empty($_POST['username']) && !empty($_POST['password'])) {
+
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $hashPassword = hash("sha256", $password);
                 
                 $sql = "SELECT * FROM users WHERE username = '$username' AND encrypted_password = '$hashPassword'";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0) {
-                    header("Location: ../menu.php");
+                    if($username == "test" && $password == "test"){
+                        session_start();
+                        $_SESSION["username"] = 'test';
+                        header("Location: ../menu.php");
+                    }
                     exit;
                 } else {
                     echo "username o password sbagliata";

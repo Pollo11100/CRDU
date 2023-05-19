@@ -1,5 +1,8 @@
 <?php      
 	require_once("../connection.php");
+	if(!isset($_SESSION['username'])){
+		header('location: ../controller/index.php');
+	}
 
 	$firstname = "";
 	$lastname = "";

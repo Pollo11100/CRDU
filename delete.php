@@ -9,6 +9,10 @@
 
 			<?php      
 				require_once("../connection.php");
+				//session_start();
+				if(!isset($_SESSION['username'])){
+					header('location: ../controller/index.php');
+				}
 
 				$canc = "SELECT * FROM clients WHERE id = " . $_GET["id"];
 				$result = mysqli_query($conn, $canc);

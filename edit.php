@@ -1,4 +1,15 @@
+<?php
+    //session_start();
+    if(!isset($_SESSION['username'])){
+        header('location: ../controller/index.php');
+    }
+
+    
+?>
+
+
 <!DOCTYPE html>
+
 <html>
     
     <head>
@@ -25,7 +36,6 @@
         <?php
            require_once("../connection.php");
            
-
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$firstname = $_POST['firstname'];
 				$lastname = $_POST['lastname'];
